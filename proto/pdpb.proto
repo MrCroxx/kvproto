@@ -357,6 +357,10 @@ message TransferLeader {
     metapb.Peer peer = 1;
 }
 
+message TransferLeaderV2 {
+    repeated metapb.Peer peers = 1;
+}
+
 message Merge {
     metapb.Region target = 1;
 }
@@ -405,6 +409,7 @@ message RegionHeartbeatResponse {
     //       (not in the same RegionHeartbeatResponse).
     //       Now, PD use ChangePeerV2 only for replacing peers.
     ChangePeerV2 change_peer_v2 = 9;
+    TransferLeaderV2 transfer_leader_v2 = 10;
 }
 
 message AskSplitRequest {

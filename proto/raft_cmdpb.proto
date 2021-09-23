@@ -176,6 +176,12 @@ message TransferLeaderRequest {
 
 message TransferLeaderResponse {}
 
+message TransferLeaderRequestV2 {
+    repeated metapb.Peer peers = 1;
+}
+
+message TransferLeaderResponseV2 {}
+
 message ComputeHashRequest {
     bytes context = 1;
 }
